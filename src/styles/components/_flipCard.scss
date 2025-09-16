@@ -1,0 +1,169 @@
+/* Styles de base pour la flip card */
+.flip-card {
+  width: 100%;
+  height: 25rem;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.flip-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.flip-front {
+  background: #fff;
+  color: #111;
+  display: flex;
+  flex-direction: column;
+}
+
+.flip-front .image-container {
+  position: relative;
+  width: 100%;
+  height: 80%;
+  flex-shrink: 0;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.flip-front .content {
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #113555;
+  color: #ffffff;
+}
+
+.flip-front .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.flip-front .description {
+  font-size: 0.9rem;
+}
+
+.flip-back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background: linear-gradient(273deg, #112840 0%, #154467 35%, #1f6692 100%);
+  color: #fff;
+  transform: rotateY(180deg);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.flip-back .stack-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.flip-back .stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.flip-back .stack-list li {
+  background: #112840;
+  padding: 0.3rem 1rem;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.flip-back .project-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: #0d141f;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.flip-back .project-link:hover {
+  background: #113555;
+}
+
+.flip-card:hover .flip-front,
+.flip-card:hover .flip-back {
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.6);
+}
+
+/* Styles pour le conteneur de projet avec numéro */
+.projects-section {}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1f2937;
+}
+
+.project-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 3rem 0;
+  /* Hover sur le flip-card change le numéro */
+}
+
+.project-container .flip-card:hover ~ .project-number,
+.project-container .flip-card:hover + .project-number {
+  color: red;
+}
+
+/* Numéro du projet */
+.project-number {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #e5e7eb;
+  flex-shrink: 0;
+  min-width: 120px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+
+.flip-card-wrapper {
+  flex-grow: 1;
+}
+
+
+.number-left {
+  flex-direction: row;
+}
+
+.number-right {
+  flex-direction: row-reverse;
+}
+
+

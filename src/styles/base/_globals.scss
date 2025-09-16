@@ -1,0 +1,47 @@
+@import "./colors";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+  color: $solid-colors-B;
+}
+
+body {
+  background: $background-main;
+}
+
+main,
+section {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+section {
+  scroll-margin-top: 80px;
+  padding-top: 20px;
+}
+
+@media (max-width: 1024px) {
+  main,
+  section {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  main,
+  section {
+    width: 95%;
+  }
+}

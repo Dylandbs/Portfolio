@@ -1,0 +1,123 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  background: #1f6692;
+  color: $solid-colors-B;
+  padding: 1rem 3rem 1rem 1rem;
+
+  h3 {
+    cursor: pointer;
+    margin: 0;
+  }
+
+  .links-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    button {
+      all: unset;
+      padding: 0.2rem 0.8rem;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: linear-gradient(135deg, #112840, #154467);
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  
+  .burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    z-index: 1001;
+
+    .burger-line {
+      width: 2rem;
+      height: 0.25rem;
+      background-color: $solid-colors-B;
+      border-radius: 10px;
+      transition: all 0.3s linear;
+    }
+
+    .line-1-open {
+      transform: rotate(45deg) translate(0.4rem, 0.4rem);
+    }
+
+    .line-2-open {
+      opacity: 0;
+    }
+
+    .line-3-open {
+      transform: rotate(-45deg) translate(0.4rem, -0.4rem);
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+
+    .burger-menu {
+      display: flex;
+    }
+
+    .links-navbar {
+      position: fixed;
+      top: -100%;
+      left: 0;     
+      height: auto; 
+      width: 100%;  
+      max-width: none; 
+      flex-direction: column;
+      background: #1f6692;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
+      transition: top 0.3s ease-in-out; 
+      padding: 1rem 0 2rem 0; 
+      z-index: 999;
+      gap: 1rem;
+
+      &.mobile-menu-open {
+        top: 25px;
+        right: 0;
+      }
+
+      button {
+        width: 80%;
+        text-align: center;
+        padding: 1rem;
+        font-size: 1.2rem;
+
+        &:hover {
+          background: linear-gradient(135deg, #112840, #154467);
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+
+  @media (max-width: 480px) {
+    .links-navbar {
+      width: 100%;
+
+      button {
+        font-size: 1.1rem;
+        padding: 0.8rem;
+      }
+    }
+  }
+}

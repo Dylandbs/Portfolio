@@ -1,0 +1,75 @@
+.infos {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  color: #a8eeff;
+
+  .text-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    max-width: 70%;
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    .title-infos {
+      display: inline-block;
+      width: 92%;
+      font-size: 1.4rem;
+      background: linear-gradient(90deg, #197cae, #197cae);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      span {
+        display: inline-block;
+        margin: 3rem 0;
+        font-size: 3rem;
+      }
+    }
+
+    .github-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      background-color: #a8eeff;
+      text-decoration: none;
+      margin: 1rem 0;
+      padding: 8px;
+      transition: transform 0.2s;
+
+      svg {
+        width: 24px;
+        height: 24px;
+        
+        path {
+          fill: #154467;
+        }
+      }
+
+      &:active {
+        transform: translate(2px, 2px);
+      }
+    }
+  }
+
+  .img-infos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+
+    img {
+      filter: drop-shadow(5px 5px 10px #28a5ff72);
+    }
+  }
+}

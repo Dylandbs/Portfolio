@@ -1,0 +1,11 @@
+// main.scss
+@import './base/colors';      
+@import './base/typography';
+@import './base/globals';
+
+@import './layout/navbar';  
+@import './components/accueil';
+@import './components/apropos';
+@import './components/projets';
+@import './components/flipCard';
+@import './components/form';
