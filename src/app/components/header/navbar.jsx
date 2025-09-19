@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function Navbar({ scrollToSection }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
   const links = [
     { id: "accueil", label: "Accueil" },
@@ -13,22 +12,9 @@ export default function Navbar({ scrollToSection }) {
     { id: "contact", label: "Contact" },
   ];
 
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
-
   const handleLinkClick = (id) => {
     scrollToSection(id);
-    if (isMobile) {
-      setIsMenuOpen(false);
-    }
+    setIsMenuOpen(false); 
   };
 
   const toggleMenu = () => {
@@ -38,16 +24,12 @@ export default function Navbar({ scrollToSection }) {
   return (
     <nav className="navbar">
       <h3 onClick={() => handleLinkClick(links[0].id)}>Dylan Dubois</h3>
-      
-
       <div className="burger-menu" onClick={toggleMenu}>
         <div className={`burger-line ${isMenuOpen ? 'line-1-open' : ''}`}></div>
         <div className={`burger-line ${isMenuOpen ? 'line-2-open' : ''}`}></div>
         <div className={`burger-line ${isMenuOpen ? 'line-3-open' : ''}`}></div>
       </div>
-      
-
-      <div className={`links-navbar ${isMobile ? 'mobile-menu' : ''} ${isMenuOpen ? 'mobile-menu-open' : ''}`}>
+      <div className={`links-navbar ${isMenuOpen ? 'mobile-menu-open' : ''}`}>
         {links.map((link) => (
           <button key={link.id} onClick={() => handleLinkClick(link.id)}>
             {link.label}

@@ -64,10 +64,9 @@ export default function Accueil() {
         onAnimationComplete={() => setFloat(true)}
       >
         <MotionImage
+        className="img-profil"
           src={photo}
           alt="image de profil"
-          width={300}
-          height={300}
           quality={100}
           style={{ display: "block" }}
           animate={

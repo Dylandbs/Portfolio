@@ -1,11 +1,20 @@
 "use client";
 
 import FlipCard from "./flipCard";
-import photoProjetTest from "../../../../public/images/test-projet.png";
 import projetBank from "../../../../public/images/projet-bank.png";
 import { motion } from "framer-motion";
 
 const projects = [
+  {
+    title: "Argent Bank",
+    subtitle: "Site bancaire avec authentification utilisateur",
+    description: `Développement d’une application bancaire responsive avec React, 
+    Redux et Sass, intégrée aux API REST pour gérer l’authentification 
+    et le profil utilisateur de manière sécurisée`,
+    image: projetBank,
+    stack: ["React", "Redux", "SASS"],
+    link: "https://github.com/Dylandbs/Projet-Bank-Argent-Openclassroom",
+  },
   {
     title: "Argent Bank",
     subtitle: "Site bancaire avec authentification utilisateur",
@@ -16,27 +25,25 @@ const projects = [
     stack: ["React", "Redux", "SASS"],
     link: "https://github.com/Dylandbs/Projet-Bank-Argent-Openclassroom",
   },
-  {
-    title: "Portfolio",
-    subtitle: "Mon site personnel avec Next.js et Tailwind.",
-    description: "Mon site personnel avec Next.js et Tailwind.",
-    image: photoProjetTest,
-    stack: ["Next.js", "React", "TailwindCSS"],
-    link: "https://monportfolio.com",
+   {
+    title: "Argent Bank",
+    subtitle: "Site bancaire avec authentification utilisateur",
+    description: `Développement d’une application bancaire responsive avec React, 
+    Redux et Sass, intégrée aux API REST pour gérer l’authentification 
+    et le profil utilisateur de manière sécurisée et optimisée.`,
+    image: projetBank,
+    stack: ["React", "Redux", "SASS"],
+    link: "https://github.com/Dylandbs/Projet-Bank-Argent-Openclassroom",
   },
   {
-    title: "Dashboard",
-    description: "Tableau de bord admin avec authentification.",
-    image: "/images/dashboard.png",
-    stack: ["React", "Node.js", "PostgreSQL"],
-    link: "https://madashboard.com",
-  },
-  {
-    title: "Dashboard",
-    description: "Tableau de bord admin avec authentification.",
-    image: "/images/dashboard.png",
-    stack: ["React", "Node.js", "PostgreSQL"],
-    link: "https://madashboard.com",
+    title: "Argent Bank",
+    subtitle: "Site bancaire avec authentification utilisateur",
+    description: `Développement d’une application bancaire responsive avec React, 
+    Redux et Sass, intégrée aux API REST pour gérer l’authentification 
+    et le profil utilisateur de manière sécurisée et optimisée.`,
+    image: projetBank,
+    stack: ["React", "Redux", "SASS"],
+    link: "https://github.com/Dylandbs/Projet-Bank-Argent-Openclassroom",
   },
 ];
 

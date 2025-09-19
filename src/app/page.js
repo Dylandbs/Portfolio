@@ -12,18 +12,18 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <section id="accueil">
+      { <section id="accueil">
         <Accueil />
-      </section>
+      </section> }
       <section id="apropos">
         <Apropos />
       </section>
-      <section id="projets">
+      { <section id="projets">
         <Projets />
-      </section>
-      <section id="contact">
+      </section> }
+      { <section id="contact">
         <Contact />
-      </section>
+      </section> }
     </>
   );
 }

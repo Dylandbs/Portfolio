@@ -1,4 +1,3 @@
-/* Styles de base pour la flip card */
 .flip-card {
   width: 100%;
   height: 25rem;
@@ -53,6 +52,9 @@
   justify-content: space-between;
   background: #113555;
   color: #ffffff;
+   @media (min-width: 768px) and (max-width: 1000px) {
+    padding: 0;
+  }
 }
 
 .flip-front .title {
@@ -74,6 +76,9 @@
   transform: rotateY(180deg);
   padding: 1.5rem;
   text-align: center;
+   @media (max-width: 385px) {
+   padding: 0.2rem 1rem 0.5rem 1rem;
+  }
 }
 
 .flip-back .stack-title {
@@ -89,6 +94,9 @@
   list-style: none;
   padding: 0;
   margin-top: 1rem;
+  @media (max-width: 385px) {
+    margin-top: 0.3rem;
+  }
 }
 
 .flip-back .stack-list li {
@@ -96,6 +104,10 @@
   padding: 0.3rem 1rem;
   border-radius: 10px;
   color: #ffffff;
+  @media (max-width: 385px) {
+   padding: 0.2rem 0.6rem;
+   font-size: 1rem;
+  }
 }
 
 .flip-back .project-link {
@@ -107,6 +119,10 @@
   text-decoration: none;
   color: #fff;
   transition: background 0.3s ease;
+  @media (max-width: 385px) {
+    margin-top: 0.5rem;
+    padding: 0.3rem 0.5rem;
+  }
 }
 
 .flip-back .project-link:hover {
@@ -117,9 +133,6 @@
 .flip-card:hover .flip-back {
   box-shadow: 0 15px 35px rgba(59, 130, 246, 0.6);
 }
-
-/* Styles pour le conteneur de projet avec numéro */
-.projects-section {}
 
 .section-title {
   text-align: center;
@@ -133,15 +146,8 @@
   align-items: center;
   gap: 2rem;
   margin: 3rem 0;
-  /* Hover sur le flip-card change le numéro */
 }
 
-.project-container .flip-card:hover ~ .project-number,
-.project-container .flip-card:hover + .project-number {
-  color: red;
-}
-
-/* Numéro du projet */
 .project-number {
   font-size: 5rem;
   font-weight: 800;
@@ -152,11 +158,9 @@
   transition: color 0.3s ease;
 }
 
-
 .flip-card-wrapper {
   flex-grow: 1;
 }
-
 
 .number-left {
   flex-direction: row;
@@ -166,4 +170,8 @@
   flex-direction: row-reverse;
 }
 
-
+@media (max-width: 500px) {
+  .flip-front .image-container {
+    height: 70%;
+  }
+}

@@ -1,21 +1,21 @@
 .contact-form {
   width: 90%;
-  height: 75vh;
+  min-height: auto;
   background: linear-gradient(#0d141f, #111a27) padding-box,
     linear-gradient(145deg, transparent 35%, #197cae, #1b537b) border-box;
   border: 2px solid transparent;
-  padding: 32px 24px;
+  padding: 3rem 2rem;
   font-size: 14px;
   font-family: inherit;
   color: white;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.2rem;
   box-sizing: border-box;
-  border-radius: 16px;
+  border-radius: 1rem;
   background-size: 200% 100%;
   animation: gradient 5s ease infinite;
-  margin: 2rem auto;
+  margin: 4rem auto;
 
   @keyframes gradient {
     0% {
@@ -31,7 +31,7 @@
     }
   }
 
-  .form-title{
+  .form-title {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,6 +106,14 @@
     &:active {
       scale: 0.98;
     }
+  }
+  .error {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+  .visually-hidden {
+    display: none;
   }
 }
 

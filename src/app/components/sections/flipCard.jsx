@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function FlipCard({
-  index,
   title,
   subtitle,
   description,
@@ -14,7 +13,6 @@ export default function FlipCard({
   link = "#",
 }) {
   const [flipped, setFlipped] = useState(false);
-  const isEven = index % 2 === 0;
 
   const imgSrc =
     typeof image === "string" && image.trim() !== ""
@@ -24,11 +22,6 @@ export default function FlipCard({
 
   const frontAnimation = {
     rotateY: [0, 4, 0, -4, 0],
-    boxShadow: [
-      "0px 10px 15px rgba(0,0,0,0.15)",
-      "0px 15px 20px rgba(59,130,246,0.25)",
-      "0px 10px 15px rgba(0,0,0,0.15)",
-    ],
   };
 
   const frontTransition = {
@@ -41,7 +34,7 @@ export default function FlipCard({
     rest: { scale: 1, filter: "drop-shadow(0px 10px 15px rgba(0,0,0,0.15))" },
     hover: {
       filter: "drop-shadow(0px 15px 20px rgba(59,130,246,0.35))",
-      transition: { duration: 0.28 },
+      transition: { duration: 0.2 },
     },
   };
 
@@ -52,7 +45,6 @@ export default function FlipCard({
       y: 0,
       transition: {
         duration: 0.3,
-        delay: index * 0.1,
         ease: "easeOut",
       },
     },
@@ -60,14 +52,12 @@ export default function FlipCard({
 
   return (
     <motion.div
-      className={`project-row ${isEven ? "reverse" : ""}`}
+      className="project-row"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
       variants={containerVariants}
     >
-      <motion.div className="project-number">{index}</motion.div>
-
       <motion.div
         className="flip-card"
         variants={cardVariants}
@@ -79,7 +69,7 @@ export default function FlipCard({
         <motion.div
           className="flip-inner"
           animate={{ rotateY: flipped ? 180 : 0 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
+          transition={{ duration: 0.2, ease: "easeInOut" }}
         >
           <motion.div
             className="flip-front"

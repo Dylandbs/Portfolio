@@ -16,6 +16,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 1.2rem;
   margin-top: 2rem;
   border-radius: 10px;
   background: #112840;
@@ -31,7 +32,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 60%;
+    width: 80%;
     margin-bottom: 2rem;
   }
   .about_skills {
@@ -63,5 +64,20 @@
         font-size: 14px;
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+      border-radius: 0px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about {
+     .about_skills{
+      width: 100%;
+      flex-wrap: wrap;
+     }
   }
 }

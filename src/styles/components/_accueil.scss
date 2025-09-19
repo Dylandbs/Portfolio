@@ -50,7 +50,7 @@
       svg {
         width: 24px;
         height: 24px;
-        
+
         path {
           fill: #154467;
         }
@@ -68,8 +68,44 @@
     align-items: center;
     width: 30%;
 
+    .img-profil {
+      width: 300px;
+      height: 300px;
+    }
+
     img {
       filter: drop-shadow(5px 5px 10px #28a5ff72);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .infos {
+    padding: 0 2rem;
+    .img-infos {
+      .img-profil {
+        width: 250px;
+        height: 250px;
+      }
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  .infos {
+    margin: 6rem 0;
+    .text-infos {
+      max-width: 90%;
+    }
+    flex-direction: column-reverse;
+    .title-infos {
+      font-size: 0.7rem;
+    }
+    .img-infos {
+      .img-profil {
+        width: 200px;
+        height: 200px;
+      }
     }
   }
 }
