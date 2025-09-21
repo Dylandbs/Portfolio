@@ -65,6 +65,17 @@ export default function FlipCard({
         whileHover="hover"
         animate="rest"
         onClick={() => setFlipped((s) => !s)}
+
+        role="button"
+        tabIndex={0}
+        aria-pressed={flipped}
+        aria-label={flipped ? `Fermer ${title}` : `Ouvrir ${title}`}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setFlipped((s) => !s);
+          }
+        }}
       >
         <motion.div
           className="flip-inner"
@@ -77,7 +88,12 @@ export default function FlipCard({
             transition={frontTransition}
           >
             <div className="image-container">
-              <Image src={imgSrc} alt={imgAlt} fill className="object-cover" />
+              <Image
+                src={imgSrc}
+                alt={imgAlt}
+                fill
+                role="img"
+              />
             </div>
             <div className="content">
               <h3 className="title">{title}</h3>
@@ -85,7 +101,7 @@ export default function FlipCard({
             </div>
           </motion.div>
 
-          <div className="flip-back">
+          <div className="flip-back" role="region" aria-label={`Détails du projet ${title}`}>
             <h3>Description du projet</h3>
             <p>{description}</p>
             <ul className="stack-list">

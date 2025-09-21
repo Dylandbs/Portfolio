@@ -19,7 +19,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 5rem 3rem;
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     grid-template-columns: repeat(1, 1fr);
     padding: 3rem;
     gap: 4rem;

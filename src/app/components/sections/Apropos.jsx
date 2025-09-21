@@ -70,20 +70,28 @@ export default function Apropos() {
           visible: { transition: { staggerChildren: 0.2 } },
         }}
       >
-        <motion.div className="about_description" variants={fadeInVariants}>
+        <motion.div
+          className="about_description"
+          variants={fadeInVariants}
+          role="region"
+          aria-label="Présentation personnelle"
+        >
           <p>
-            Passionné par le développement web, j’ai commencé en autodidacte,
-            explorant le code par curiosité et envie de créer. J’ai ensuite
-            suivi une formation chez OpenClassrooms pour structurer mes
-            connaissances et approfondir mes compétences en intégration et
-            React.
+            Je suis passionné par le développement web et j’ai commencé en
+            autodidacte, simplement par curiosité. Très
+            vite, j’ai pris plaisir à explorer le code. Pour structurer mes
+            connaissances et approfondir mes compétences, j’ai suivi une
+            formation chez OpenClassrooms, notamment en intégration web React.
+            Grâce à cette expérience en télétravail, j’ai aussi appris à
+            m’organiser efficacement, gérer mon temps et rester autonome.
             <br />
             <br />
-            Aujourd’hui, je prends plaisir à transformer des idées en
-            expériences web fonctionnelles et esthétiques. Toujours curieux, je
-            continue à apprendre et à expérimenter, avec pour objectif de créer
-            des projets qui allient technique et simplicité pour
-            l’utilisateur.
+            Aujourd’hui, j’aime créer des expériences web à la fois
+            fonctionnelles et simples à utiliser. Curieux et motivé, je continue
+            d’apprendre chaque jour, d’expérimenter de nouvelles technologies.
+            J’apprécie particulièrement le travail en équipe, le partage d’idées
+            et l’exploration de nouvelles idées pour que chaque projet ait un
+            vrai impact pour l’utilisateur.
           </p>
         </motion.div>
 
@@ -95,6 +103,8 @@ export default function Apropos() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
+          role="list"
+          aria-label="Compétences techniques"
         >
           {skills.map((skill, index) => (
             <motion.div
@@ -103,10 +113,13 @@ export default function Apropos() {
               variants={itemVariants}
               whileHover="hover"
               whileTap={{ scale: 0.95 }}
+              role="listitem"
+              tabIndex={0}
+              aria-label={skill.name}
             >
               <motion.img
                 src={skill.icon.src}
-                alt={`${skill.name} icon`}
+                alt={skill.name}
                 className="skill_icon"
                 whileHover={{
                   scale: 1.2,
